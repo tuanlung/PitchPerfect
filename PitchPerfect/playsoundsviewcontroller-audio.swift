@@ -71,6 +71,7 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         reverbNode.loadFactoryPreset(.cathedral)
         reverbNode.wetDryMix = 50
         audioEngine.attach(reverbNode)
+      
         
         // connect nodes
         if echo == true && reverb == true {
@@ -82,6 +83,7 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         } else {
             connectAudioNodes(audioPlayerNode, changeRatePitchNode, audioEngine.outputNode)
         }
+ 
         
         // schedule to play and start the engine!
         audioPlayerNode.stop()
